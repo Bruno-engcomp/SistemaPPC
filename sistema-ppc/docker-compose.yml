@@ -1,0 +1,47 @@
+version: '3.8'
+
+services:
+  app:
+    image: php:8.2-fpm
+    container_name: sistema_ppc_app
+    restart: unless-stopped
+    working_dir: /var/www
+    volumes:
+      - ./:/var/www
+    networks:
+      - ppc-network
+
+  webserver:
+    image: nginx:alpine
+    container_name: sistema_ppc_webserver
+    restart: unless-stopped
+    ports:
+      - "8000:80"
+    volumes:
+      - ./:/var/www
+      - ./.docker/nginx/conf.d/:/etc/nginx/conf.d/
+    networks:
+      - ppc-network
+
+  db:
+    image: mysql:8.0
+    container_name: sistema_ppc_db
+    restart: unless-stopped
+    environment:
+      MYSQL_DATABASE: sistema_ppc
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_USER: ppc_user
+      MYSQL_PASSWORD: ppc_password
+    ports:
+      - "33060:3306"
+    volumes:
+      - dbdata:/var/lib/mysql
+    networks:
+      - ppc-network
+
+networks:
+  ppc-network:
+    driver: bridge
+
+volumes:
+  dbdata:
