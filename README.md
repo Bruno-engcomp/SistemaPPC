@@ -119,6 +119,13 @@ Para visualizar somente as tabelas e dados do MySQL de forma gráfica, recomenda
    - **Host**: `127.0.0.1` | **Porta**: `33060`
    - **Database**: `sistema_ppc`
    - **Usuário**: `ppc_user` | **Senha**: `ppc_password`
+   ```bash
+   DB_HOST=127.0.0.1
+   DB_PORT=33060
+   DB_DATABASE=sistema_ppc
+   DB_USERNAME=ppc_user
+   DB_PASSWORD=ppc_password
+   ```
 2. **VS Code Extension (Database Client / MySQL)**:
    - Permite visualizar o MySQL direto dentro do VS Code.
 3. **MySQL Workbench**:
