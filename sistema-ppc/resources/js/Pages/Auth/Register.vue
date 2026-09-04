@@ -120,20 +120,21 @@ const submit = () => {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: radial-gradient(circle at top right, #1e293b 0%, #0b1329 100%);
+  background-color: #f1f5f9;
   padding: 1.5rem;
   font-family: system-ui, -apple-system, sans-serif;
+  box-sizing: border-box;
 }
 
 .auth-card {
   width: 100%;
   max-width: 480px;
-  background: rgba(30, 41, 59, 0.75);
-  backdrop-filter: blur(16px);
-  border: 1px solid #334155;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
   border-radius: 16px;
   padding: 2.5rem;
-  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.01);
+  box-sizing: border-box;
 }
 
 .brand-header {
@@ -142,19 +143,20 @@ const submit = () => {
 }
 
 .logo-circle {
-  font-size: 2.5rem;
+  max-height: 80px;
+  width: auto;
   margin-bottom: 0.5rem;
 }
 
 h2 {
-  color: #f8fafc;
+  color: #0f172a;
   font-size: 1.75rem;
   font-weight: 700;
   margin: 0;
 }
 
 .subtitle {
-  color: #94a3b8;
+  color: #64748b;
   font-size: 0.9rem;
   margin-top: 0.3rem;
 }
@@ -171,6 +173,12 @@ h2 {
   gap: 0.8rem;
 }
 
+@media (max-width: 480px) {
+  .grid-2 {
+    grid-template-columns: 1fr;
+  }
+}
+
 .form-group {
   display: flex;
   flex-direction: column;
@@ -178,7 +186,7 @@ h2 {
 }
 
 label {
-  color: #cbd5e1;
+  color: #334155;
   font-size: 0.85rem;
   font-weight: 600;
 }
@@ -187,10 +195,12 @@ input[type="text"],
 input[type="email"],
 input[type="password"],
 select {
-  background: #0f172a;
-  border: 1px solid #334155;
+  width: 100%;
+  box-sizing: border-box;
+  background: #f8fafc;
+  border: 1px solid #cbd5e1;
   border-radius: 8px;
-  color: #f8fafc;
+  color: #0f172a;
   padding: 0.75rem 1rem;
   font-size: 0.95rem;
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
@@ -198,8 +208,9 @@ select {
 
 input:focus, select:focus {
   outline: none;
-  border-color: #38bdf8;
-  box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.2);
+  border-color: #0284c7;
+  box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.15);
+  background: #ffffff;
 }
 
 .input-error {
@@ -207,37 +218,42 @@ input:focus, select:focus {
 }
 
 .error-msg {
-  color: #f87171;
+  color: #dc2626;
   font-size: 0.8rem;
 }
 
 .btn-submit {
-  background: linear-gradient(135deg, #38bdf8 0%, #0284c7 100%);
-  color: #0f172a;
+  background: #0284c7;
+  color: #ffffff;
   font-weight: 700;
   font-size: 1rem;
   padding: 0.85rem;
   border: none;
   border-radius: 8px;
   cursor: pointer;
-  transition: transform 0.15s ease, opacity 0.2s ease;
+  transition: background-color 0.15s ease, transform 0.15s ease;
   margin-top: 0.5rem;
 }
 
 .btn-submit:hover:not(:disabled) {
-  opacity: 0.95;
+  background: #0369a1;
   transform: translateY(-1px);
+}
+
+.btn-submit:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
 }
 
 .auth-footer {
   text-align: center;
   margin-top: 1.5rem;
   font-size: 0.85rem;
-  color: #94a3b8;
+  color: #64748b;
 }
 
 .auth-footer a {
-  color: #38bdf8;
+  color: #0284c7;
   text-decoration: none;
   font-weight: 600;
 }

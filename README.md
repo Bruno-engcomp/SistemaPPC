@@ -85,27 +85,78 @@ sistema-ppc/
 
 ---
 
-## 🚀 Como Executar o Projeto Localmente
+# 🚀 Como Executar o Projeto Localmente
 
-### 1. Iniciar o Banco MySQL 8.0 (via Docker)
+Siga o passo a passo abaixo para configurar e executar a aplicação em seu ambiente local do zero.
+
+---
+
+### 1. Clonar o Repositório
 ```bash
+git clone <URL_DO_REPOSITORIO>
+cd sistema-ppc
+```
+
+---
+
+### 2. Configurar Variáveis de Ambiente e Iniciar o Banco de Dados (MySQL 8.0)
+Crie o arquivo de configuração `.env` a partir do exemplo e suba o contêiner do MySQL via Docker:
+
+```bash
+cp .env.example .env
 docker-compose up -d db
 ```
 
-### 2. Rodar as Migrações e Seeders
+> **Nota:** Certifique-se de ajustar as credenciais de banco no arquivo `.env` (como `DB_HOST`, `DB_PORT`, `DB_DATABASE`, `DB_USERNAME` e `DB_PASSWORD`), se necessário.
+
+---
+
+### 3. Instalar Dependências (PHP e Node.js)
 ```bash
+composer install
+npm install
+```
+
+---
+
+### 4. Preparar Pastas de Storage e Permissões
+Crie a estrutura necessária para armazenar sessões, caches e views (evita erros de diretório ausente):
+
+```bash
+mkdir -p storage/framework/{sessions,views,cache}
+chmod -R 775 storage bootstrap/cache
+```
+
+---
+
+### 5. Gerar Chave da Aplicação, Rodar Migrações e Seeders
+```bash
+php artisan key:generate
 php artisan migrate:fresh --seed
 ```
 
-### 3. Rodar o Frontend (Vue 3 / Vite)
-```bash
-npm run dev
-```
+---
 
-### 4. Rodar o Servidor Backend (Laravel)
-```bash
-php artisan serve
-```
+### 6. Iniciar os Servidores (Backend e Frontend)
+
+Abra **dois terminais separados** no diretório raiz do projeto:
+
+* **Terminal 1 — Backend (Laravel):**
+  ```bash
+  php artisan serve
+  ```
+
+* **Terminal 2 — Frontend (Vue 3 / Vite):**
+  ```bash
+  npm run dev
+  ```
+
+---
+
+### 🌐 Acesso à Aplicação
+
+Acesse a aplicação no seu navegador através do endereço:  
+👉 [http://localhost:8000](http://localhost:8000)
 
 Acesse a aplicação no navegador em: **`http://localhost:8000`**
 
