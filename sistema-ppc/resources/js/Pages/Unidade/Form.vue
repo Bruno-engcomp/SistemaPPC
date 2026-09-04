@@ -18,7 +18,7 @@
           </div>
           <div class="form-group">
             <label>Nome do Curso</label>
-            <input type="text" v-model="form.nome_curso" placeholder="Ex: Bacharelado em Ciência da Computação" required />
+            <input type="text" v-model="form.nome_curso" placeholder="Ex: Bacharelado em Engenharia da computação" required />
           </div>
           <div class="form-group">
             <label>Modalidade</label>
@@ -96,29 +96,23 @@ const submit = () => {
   margin-bottom: 1.5rem;
 }
 .btn-back {
-  color: #6b7280;
+  color: #94a3b8;
   text-decoration: none;
-  font-size: 0.9rem;
 }
-.btn-back:hover { color: #374151; }
 .form-container {
   display: flex;
   flex-direction: column;
   gap: 2rem;
 }
 .form-section {
-  background: #ffffff;
+  background: #1e293b;
   border-radius: 10px;
   padding: 1.5rem;
-  border: 1px solid #e5e7eb;
-  box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+  border: 1px solid #334155;
 }
 .form-section h3 {
   margin-bottom: 1rem;
-  color: #1e40af;
-  font-size: 1rem;
-  border-bottom: 1px solid #e5e7eb;
-  padding-bottom: 0.5rem;
+  color: #38bdf8;
 }
 .grid-2 {
   display: grid;
@@ -135,38 +129,32 @@ const submit = () => {
   grid-column: 1 / -1;
 }
 label {
-  font-size: 0.88rem;
-  color: #4b5563;
-  font-weight: 500;
+  font-size: 0.9rem;
+  color: #94a3b8;
 }
 input, select, textarea {
-  background: #f9fafb;
-  border: 1px solid #d1d5db;
-  color: #1f2937;
+  background: #0f172a;
+  border: 1px solid #334155;
+  color: #f8fafc;
   padding: 0.6rem;
   border-radius: 6px;
-  font-size: 0.9rem;
-}
-input:focus, select:focus, textarea:focus {
-  outline: none;
-  border-color: #6b7280;
 }
 .form-footer {
   text-align: right;
 }
 .btn-submit {
-  background: #1e40af;
-  color: #fff;
+  background: #38bdf8;
+  color: #0f172a;
   padding: 0.8rem 1.5rem;
   border: none;
   border-radius: 8px;
   font-weight: 700;
   cursor: pointer;
-  transition: background-color 0.2s ease, transform 0.15s ease;
+  transition: transform 0.15s ease, background-color 0.2s ease;
 }
 .btn-submit:hover:not(:disabled) {
-  background: #1d3a95;
+  background: #0284c7;
+  color: #fff;
   transform: translateY(-2px);
 }
-.btn-submit:disabled { opacity: 0.6; cursor: not-allowed; }
 </style>

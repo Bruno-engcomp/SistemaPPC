@@ -9,7 +9,7 @@
       <div class="grid-form">
         <div class="form-group">
           <label>Nome da Disciplina</label>
-          <input type="text" v-model="disciplina.nome" placeholder="Ex: Algoritmos I" required />
+          <input type="text" v-model="disciplina.nome" placeholder="Ex: Programação " required />
         </div>
         <div class="form-group">
           <label>Código (opcional)</label>
@@ -64,8 +64,8 @@ const removeDisciplina = (index) => {
 
 <style scoped>
 .disciplina-card {
-  background: #f9fafb;
-  border: 1px solid #e5e7eb;
+  background: #1e293b;
+  border: 1px solid #334155;
   border-radius: 8px;
   padding: 1rem;
   margin-bottom: 1rem;
@@ -75,9 +75,8 @@ const removeDisciplina = (index) => {
   justify-content: space-between;
   align-items: center;
   margin-bottom: 1rem;
-  color: #1e40af;
+  color: #38bdf8;
 }
-.card-header h4 { color: #1e40af; font-size: 0.9rem; }
 .grid-form {
   display: grid;
   grid-template-columns: 2fr 1fr 1fr 1fr;
@@ -91,44 +90,30 @@ const removeDisciplina = (index) => {
 }
 .form-group label {
   font-size: 0.85rem;
-  color: #4b5563;
-  font-weight: 500;
+  color: #94a3b8;
 }
 input, textarea {
-  background: #ffffff;
-  border: 1px solid #d1d5db;
-  color: #1f2937;
+  background: #0f172a;
+  border: 1px solid #334155;
+  color: #f8fafc;
   padding: 0.5rem;
   border-radius: 6px;
-  font-size: 0.88rem;
 }
-input:focus, textarea:focus {
-  outline: none;
-  border-color: #6b7280;
-}
-.full-width { grid-column: 1 / -1; }
 .btn-remove {
-  background: #fee2e2;
-  color: #991b1b;
-  border: 1px solid #fca5a5;
+  background: #7f1d1d;
+  color: #fca5a5;
+  border: none;
   padding: 0.3rem 0.6rem;
   border-radius: 4px;
   cursor: pointer;
-  font-size: 0.82rem;
-  font-weight: 600;
 }
-.btn-remove:hover { background: #fca5a5; }
 .btn-add {
-  background: #1e40af;
+  background: #0284c7;
   color: #fff;
   border: none;
   padding: 0.6rem 1rem;
   border-radius: 6px;
   cursor: pointer;
   width: 100%;
-  font-weight: 600;
-  font-size: 0.9rem;
-  transition: background-color 0.2s ease;
 }
-.btn-add:hover { background: #1d3a95; }
 </style>
