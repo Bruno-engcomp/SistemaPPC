@@ -20,6 +20,14 @@ yarn-error.log
 # Composer phar
 composer.phar
 
+# Binary / old DB file
+sistema_ppc
+
+# Laravel storage (generated at runtime)
+/storage/framework/sessions/
+/storage/framework/views/
+/storage/framework/cache/
+
 # IDE
 .idea/
 .vscode/
